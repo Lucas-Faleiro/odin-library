@@ -10,7 +10,7 @@
 
   </head>
   <body>
-    <div>
+    <div id="app">
       <header id="header-section">
         <h1>Kora's Library</h1>
         <div id="icons-header">
@@ -19,6 +19,29 @@
         </div>
       </header>
       <main>
+        <button id="open-form-btn">Add new book</button>
+        <dialog id="modal" closedby="any">
+          <h3>Add new book</h3>
+          <form action="" id="form-book">
+            <div>
+              <label for="title">Title: </label>
+              <input type="text" name="title" id="title" />
+            </div>
+            <div>
+              <label for="author">Author: </label>
+              <input type="text" name="author" id="author" />
+            </div>
+            <div>
+              <label for="pages">Pages: </label>
+              <input type="text" name="pages" id="pages" />
+            </div>
+            <div>
+              <input type="checkbox" name="read" id="read" />
+              <label for="read">Have you read it?</label>
+            </div>
+            <button id="add-book-btn">Add Book</button>
+          </form>
+        </dialog>
         <section id="book-list">
         </section>
       </main>
