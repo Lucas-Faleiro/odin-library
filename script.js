@@ -25,14 +25,8 @@ function displayBooks() {
           readBtn.setAttribute("id", "not-read");
         }
         readBtn.addEventListener("click", () => {
-          value = !value;
-          if (value === true) {
-            readBtn.innerText = "Already Read";
-            readBtn.setAttribute("id", "already-read");
-          } else {
-            readBtn.innerText = "Not Read";
-            readBtn.setAttribute("id", "not-read");
-          }
+          book.toggleReadStatus();
+          displayBooks();
         });
         bookContainer.appendChild(readBtn);
         continue;
@@ -93,6 +87,10 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+
+  Book.prototype.toggleReadStatus = function () {
+    this.read = !this.read;
+  };
 }
 
 function addBookToLibrary(title, author, pages, read) {
